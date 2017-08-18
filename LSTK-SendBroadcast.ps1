@@ -25,7 +25,7 @@ $computers | Sort-Object name | Where-Object{$_.name -notin (Get-Job -state Comp
     # There is a much better way, but I wrote this in ~10 min.  Will update soon.
     while((Get-Job -state Running).count -ge 10)
     {
-        "$((Get-Job -state Completed).count) / $($comps.count)"
+        "$((Get-Job -state Completed).count) / $($computers.count)"
         "Running: $((get-job -state Running).count)"
         
         while((Get-Job -state Running).count -ge 10)
